@@ -216,6 +216,18 @@
 ::: thebibliography
 9
 
-Articel *On the role of scientific thought*
+EWD447 *On the role of scientific thought*
 <https://www.cs.utexas.edu/~EWD/transcriptions/EWD04xx/EWD447.html>
+
+Simon Brown.\
+*Software Architecture as Code*.\
+<https://static.codingthearchitecture.com/presentations/saturn2015-software-architecture-as-code.pdf>
+
+Pavel Vlasov.\
+*Architecture As Code*.\
+<https://medium.com/nasdanika/architecture-as-code-7c0eadfc0b2b>
+
+Mark Richards, Neal Ford.\
+*Is \"Architecture as Code\" the Future of Software Design?*\
+<https://www.architectureandgovernance.com/applications-technology/is-architecture-as-code-the-future-of-software-design/>
 :::
