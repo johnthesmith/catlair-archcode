@@ -1,7 +1,8 @@
 ::: small
 # Примечания {#примечания .unnumbered}
 
-1.  doi:10.5281/zenodo.14319493 <https://doi.org/***>
+1.  doi.org/10.5281/zenodo.15250894
+    <https://doi.org/10.5281/zenodo.15250894>
 
 2.  Постоянный адрес документа \[ru\]:
     <https://github.com/johnthesmith/catlair-archcode/blob/main/export/catlair-archcode-ru.pdf>
@@ -165,7 +166,7 @@
                         context: "entity"
 
                         # Язык является конекстом
-                        lang: "contect"
+                        lang: "context"
                         # Планы todo являются контекстом
                         todo: "context"
                         # Описание asis является контекстом
@@ -346,6 +347,12 @@
                 alice: "user"
                 bob: "client"
                 link: "entity"
+                context: "entity"
+                lang: "context"
+                todo: "context"
+                asis: "context"
+                ru: "lang"
+                en: "lang"
             links:         
                 -              
                     from: "my-backend"
