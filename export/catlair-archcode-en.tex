@@ -228,43 +228,48 @@
 
         \end{enumerate}
 
-    \subsection{Relations}
+    \subsection{Links}
         \begin{enumerate}
 
-            \item After adding entities, their interconnections should be considered.
-            This is done using the "links" section.
+            \item After adding entities, their interrelationships should be considered.
+            This is done using the \texttt{links} section.
 
-            \item Relations are described as a typed direction from one entity 
+            \item Relationships are described as typed directions from one entity
             to another, where the type is also an entity.
 
-            \item For relations, it is possible to specify multiple contexts 
-            that allow representing the relation for different situations. The 
-            context is optional. If no context is specified, it is interpreted 
-            at the presentation level.
+            \item For relationships, it is possible to specify multiple contexts,
+            which allow displaying relationships in different situations. The context is optional.
+            The absence of a context is interpreted at the presentation level.
 
-            \item In general, relations can be defined as a tuple of attributes, 
-            each of which can contain one or more entities:
+            \item In general, relationships can be defined by a tuple of attributes,
+            each of which may contain one or more entities:
 
             \begin{itemize}
-                \item \texttt{from} - the source entity of the relation;
-                \item \texttt{to} - the direction entity of the relation;
-                \item \texttt{type} - the type of the relation entity;
-                \item \texttt{context} - an optional list of contexts for which the relation is relevant;
-                \item \texttt{tuple} - an optional list of specific attributes for the relation in key-value format;
+                \item \texttt{from} - the entity that is the source of the relationship;
+                \item \texttt{to} - the entity that is the direction of the relationship;
+                \item \texttt{type} - the type of the relationship;
+                \item \texttt{context} - an optional list of contexts for which the relationship is relevant;
+                \item \texttt{tuple} - an optional list of specific attributes of the relationship in key-value format;
             \end{itemize}
 
-            \item Let's describe some relations between entities:
+            \item When lists are used in the attributes \texttt{from}, \texttt{to}, \texttt{link}, or
+            \texttt{context}, relationships are interpreted as a Cartesian product of values.
+            This means that for each element from one attribute's list,
+            separate relationships are created with all elements from the other list, 
+            while the remaining values are preserved.
+
+            \item Let's describe some entity relationships:
 
             \begin{verbatim}
 
             entities:
-                # Relation as an entity
+                # Relationship as an entity
                 link: "entity"
 
-            # Define relations between entities in the "links" section
+            # Define relationships between entities in the links section
             links:
                 -
-                    # Define that the service connects to the database
+                    # Define that the service connects to the DB
                     from: "my-backend"
                     to: "my-db"
                     link: "connect"
@@ -282,17 +287,17 @@
                     to: "my-db"
                     context: "right"
                 -
-
-                    # Bob has select rights for the service in the "right" context
-                    # for the "asis" concept
+                    # Bob has select permission for the service in the context 
+                    # of rights for the "asis" concept
                     from: "bob"
                     to: "service"
                     link: "select"
                     context:
                         - "right"
                         - "asis"
-                    # It is planned that Bob will have creation and insertion rights
-                    # according to the "todo" concept
+                -
+                    # It is planned that Bob will have creation and insertion 
+                    # rights according to the "todo" concept
                     from: "bob"
                     to: "service"
                     link:
@@ -304,83 +309,99 @@
 
             \end{verbatim}
 
-            \item This method of description can include many different 
-            dependencies, including technical connections of components, 
-            hierarchical subordination structures, component placement 
-            locations, and more.
+            \item The described method can include many different dependencies, 
+            including technical component connections, hierarchical subordination 
+            structures, component location placements, and more.
 
         \end{enumerate}
 
+        \subsection{Entity Descriptions}
+            \begin{enumerate}
 
-    \subsection{Entity Descriptions}
-        \begin{enumerate}
+                \item Further, entities can be described with specific 
+                properties, also in the context of contexts.
 
-            \item Further, entities can be described with specific properties, also in the context of contexts.
+                \item In general, the properties of entities can be defined as a 
+                tuple of attributes:
 
-            \item In general, the properties of entities can be defined as a tuple of attributes:
+                \begin{itemize}
 
-            \begin{itemize}
-                \item \texttt{entity} - the entity for which the description is made, it can contain many entities;
-                \item \texttt{tuple} - a list of properties of the entity in key-value format;
-                \item \texttt{context} - an optional list of contexts for which the description is made;
-            \end{itemize}
+                    \item \texttt{entity} - the entity for which the description 
+                    is made, it can contain many entities;
 
-            \item Descriptions of entities are made in the "props" section:
+                    \item \texttt{tuple} - a list of properties of the entity in 
+                    key-value format;
 
-            \begin{verbatim}
-            props:
-                # Human-readable description for an entity
-                -
-                    entity: "entity"
-                    context: "ru"
-                    tuple:
-                        name:"Entity"
-                # Description of Alice outside of context
-                -
-                    entity: "alice"
-                    tuple:
-                        age:21
-                        weight:71
-                # Descriptions of properties for Alice and Bob in different languages
-                -
-                    entity: "alice"
-                    context: "ru"
-                    tuple:
-                        name:"Алиса"
-                -
-                    entity: "alice"
-                    context: "en"
-                    tuple:
-                        name:"Alice"
-                -
-                    entity: "bob"
-                    context: "ru"
-                    tuple:
-                        name:"Боб"
-                -
-                    entity: "bob"
-                    context: "en"
-                    tuple:
-                        name:"Bob"
+                    \item \texttt{context} - an optional list of contexts for 
+                    which the description is made;
 
-            \end{verbatim}
+                \end{itemize}
 
-            \item Similarly, any properties of entities can be described.
+                \item Descriptions of entities are made in the "props" section:
 
-        \end{enumerate}
+                \begin{verbatim}
+                props:
+                    # Human-readable description for an entity
+                    -
+                        entity: "entity"
+                        context: "ru"
+                        tuple:
+                            name:"Entity"
+                    # Description of Alice outside of context
+                    -
+                        entity: "alice"
+                        tuple:
+                            age:21
+                            weight:71
+
+                    # Descriptions of properties for Alice and 
+                    # Bob in different languages
+                    -
+                        entity: "alice"
+                        context: "ru"
+                        tuple:
+                            name:"Алиса"
+                    -
+                        entity: "alice"
+                        context: "en"
+                        tuple:
+                            name:"Alice"
+                    -
+                        entity: "bob"
+                        context: "ru"
+                        tuple:
+                            name:"Боб"
+                    -
+                        entity: "bob"
+                        context: "en"
+                        tuple:
+                            name:"Bob"
+
+                \end{verbatim}
+
+                \item Similarly, any properties of entities can be described.
+
+            \end{enumerate}
 
 
     \section{Applicability}
 
         \begin{enumerate}
 
-            \item The examples provided demonstrate the applicability of the Catlair entity model for describing architectural models.
+            \item The examples provided demonstrate the applicability of the 
+            Catlair entity model for describing architectural models.
 
-            \item The Catlair notation allows for a standardized description of the list of objects, components, and their interrelationships. Additionally, all of these can be represented from different perspectives, including chronological ones.
+            \item The Catlair notation allows for a standardized description of 
+            the list of objects, components, and their interrelationships. 
+            Additionally, all of these can be represented from different 
+            perspectives, including chronological ones.
 
-            \item The model is applicable for describing organizational structures, access rights, and technical components.
+            \item The model is applicable for describing organizational 
+            structures, access rights, and technical components.
 
-            \item The model can be used for the uniform generation of ER, BPMN, and C4 diagrams at all levels, while maintaining consistency in notation, with the format of presentation determined by the context.
+            \item The model can be used for the uniform generation of ER, BPMN, 
+            and C4 diagrams at all levels, while maintaining consistency in 
+            notation, with the format of presentation determined by the context.
 
         \end{enumerate}
 

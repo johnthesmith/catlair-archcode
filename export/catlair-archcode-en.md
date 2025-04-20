@@ -178,45 +178,51 @@ For practical examples, YAML syntax is used.
                         # English language
                         en: "lang"
 
-## Relations
+## Links
 
-1.  After adding entities, their interconnections should be considered.
-    This is done using the \"links\" section.
+1.  After adding entities, their interrelationships should be
+    considered. This is done using the `links` section.
 
-2.  Relations are described as a typed direction from one entity to
+2.  Relationships are described as typed directions from one entity to
     another, where the type is also an entity.
 
-3.  For relations, it is possible to specify multiple contexts that
-    allow representing the relation for different situations. The
-    context is optional. If no context is specified, it is interpreted
-    at the presentation level.
+3.  For relationships, it is possible to specify multiple contexts,
+    which allow displaying relationships in different situations. The
+    context is optional. The absence of a context is interpreted at the
+    presentation level.
 
-4.  In general, relations can be defined as a tuple of attributes, each
-    of which can contain one or more entities:
+4.  In general, relationships can be defined by a tuple of attributes,
+    each of which may contain one or more entities:
 
-    -   `from` - the source entity of the relation;
+    -   `from` - the entity that is the source of the relationship;
 
-    -   `to` - the direction entity of the relation;
+    -   `to` - the entity that is the direction of the relationship;
 
-    -   `type` - the type of the relation entity;
+    -   `type` - the type of the relationship;
 
-    -   `context` - an optional list of contexts for which the relation
-        is relevant;
+    -   `context` - an optional list of contexts for which the
+        relationship is relevant;
 
-    -   `tuple` - an optional list of specific attributes for the
-        relation in key-value format;
+    -   `tuple` - an optional list of specific attributes of the
+        relationship in key-value format;
 
-5.  Let's describe some relations between entities:
+5.  When lists are used in the attributes `from`, `to`, `link`, or
+    `context`, relationships are interpreted as a Cartesian product of
+    values. This means that for each element from one attribute's list,
+    separate relationships are created with all elements from the other
+    list, while the remaining values are preserved.
+
+6.  Let's describe some entity relationships:
 
 
                     entities:
-                        # Relation as an entity
+                        # Relationship as an entity
                         link: "entity"
 
-                    # Define relations between entities in the "links" section
+                    # Define relationships between entities in the links section
                     links:
                         -
-                            # Define that the service connects to the database
+                            # Define that the service connects to the DB
                             from: "my-backend"
                             to: "my-db"
                             link: "connect"
@@ -234,17 +240,17 @@ For practical examples, YAML syntax is used.
                             to: "my-db"
                             context: "right"
                         -
-
-                            # Bob has select rights for the service in the "right" context
-                            # for the "asis" concept
+                            # Bob has select permission for the service in the context 
+                            # of rights for the "asis" concept
                             from: "bob"
                             to: "service"
                             link: "select"
                             context:
                                 - "right"
                                 - "asis"
-                            # It is planned that Bob will have creation and insertion rights
-                            # according to the "todo" concept
+                        -
+                            # It is planned that Bob will have creation and insertion 
+                            # rights according to the "todo" concept
                             from: "bob"
                             to: "service"
                             link:
@@ -254,9 +260,9 @@ For practical examples, YAML syntax is used.
                                 - "right"
                                 - "todo"
 
-6.  This method of description can include many different dependencies,
-    including technical connections of components, hierarchical
-    subordination structures, component placement locations, and more.
+7.  The described method can include many different dependencies,
+    including technical component connections, hierarchical
+    subordination structures, component location placements, and more.
 
 ## Entity Descriptions
 
@@ -277,40 +283,42 @@ For practical examples, YAML syntax is used.
 
 3.  Descriptions of entities are made in the \"props\" section:
 
-                    props:
-                        # Human-readable description for an entity
-                        -
-                            entity: "entity"
-                            context: "ru"
-                            tuple:
-                                name:"Entity"
-                        # Description of Alice outside of context
-                        -
-                            entity: "alice"
-                            tuple:
-                                age:21
-                                weight:71
-                        # Descriptions of properties for Alice and Bob in different languages
-                        -
-                            entity: "alice"
-                            context: "ru"
-                            tuple:
-                                name:"Алиса"
-                        -
-                            entity: "alice"
-                            context: "en"
-                            tuple:
-                                name:"Alice"
-                        -
-                            entity: "bob"
-                            context: "ru"
-                            tuple:
-                                name:"Боб"
-                        -
-                            entity: "bob"
-                            context: "en"
-                            tuple:
-                                name:"Bob"
+                        props:
+                            # Human-readable description for an entity
+                            -
+                                entity: "entity"
+                                context: "ru"
+                                tuple:
+                                    name:"Entity"
+                            # Description of Alice outside of context
+                            -
+                                entity: "alice"
+                                tuple:
+                                    age:21
+                                    weight:71
+
+                            # Descriptions of properties for Alice and 
+                            # Bob in different languages
+                            -
+                                entity: "alice"
+                                context: "ru"
+                                tuple:
+                                    name:"Алиса"
+                            -
+                                entity: "alice"
+                                context: "en"
+                                tuple:
+                                    name:"Alice"
+                            -
+                                entity: "bob"
+                                context: "ru"
+                                tuple:
+                                    name:"Боб"
+                            -
+                                entity: "bob"
+                                context: "en"
+                                tuple:
+                                    name:"Bob"
 
 4.  Similarly, any properties of entities can be described.
 
