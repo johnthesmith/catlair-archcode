@@ -19,7 +19,7 @@ mkdir $tmp && \
 
 
 cp source/$doc-ru.tex $tmp/ && \
-#cp source/$doc-en.tex $tmp/ && \
+cp source/$doc-en.tex $tmp/ && \
 
 ## Build tex
 ##pandoc flumen.md -o ./$dest/flumen.tex --strip-comments
@@ -27,11 +27,11 @@ cp source/$doc-ru.tex $tmp/ && \
 pdflatex -interaction=errorstopmode -output-directory=$tmp/ $tmp/$doc-ru.tex && \
 pdflatex -interaction=errorstopmode -output-directory=$tmp/ $tmp/$doc-ru.tex && \
 
-#pdflatex -interaction=batchmode -output-directory=$tmp/ $tmp/$doc-en.tex && \
-#pdflatex -interaction=batchmode -output-directory=$tmp/ $tmp/$doc-en.tex && \
+pdflatex -interaction=batchmode -output-directory=$tmp/ $tmp/$doc-en.tex && \
+pdflatex -interaction=batchmode -output-directory=$tmp/ $tmp/$doc-en.tex && \
 
 pandoc $tmp/$doc-ru.tex -o $tmp/$doc-ru.md && \
-#pandoc $tmp/$doc-en.tex -o $tmp/$doc-en.md && \
+pandoc $tmp/$doc-en.tex -o $tmp/$doc-en.md && \
 
 rm -rf $dest && \
 mkdir $dest && \
