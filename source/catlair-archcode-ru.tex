@@ -18,7 +18,7 @@
 
 \begin{document}
 
-    \title{Архитектура как код на основе модели сущностей Catlair}
+    \title{Архитектурный код в моделе сущностей Catlair}
     \author{
         Черкас Руслан
         Челединов Игорь
@@ -227,8 +227,13 @@
 
                 # Контекст как сущность
                 context: "entity"
+
                 # Язык является конекстом
                 lang: "contect"
+                # Планы todo являются контекстом
+                todo: "context"
+                # Описание asis является контекстом
+                asis: "context"
 
                 # Русский язык
                 ru: "lang"
@@ -253,13 +258,15 @@
             опциональным. Отсутсвие указания контекста интерпритируется на 
             уровне представления.
 
-            \item В общем виде связи могут быть определены кортежем атрибутов:
+            \item В общем виде связи могут быть определены кортежем атрибутов, 
+            каждый из которых может содержать одну или более сущностей:
+
             \begin{itemize}
                 \item \texttt{from} - сущность источник связи;
                 \item \texttt{to} - сущность направление связи;
                 \item \texttt{type} - сущность тип связи;
                 \item \texttt{context} - опциональный список контекстов, для которых связь актуальна;
-                \item \texttt{attr} - опциональный список спекцифичные атрибутов 
+                \item \texttt{tuple} - опциональный список спекцифичных атрибутов 
                 связи в формате ключ значение;
             \end{itemize}
 
@@ -273,28 +280,7 @@
 
             # Определяем связи между сущностями в секции links
             links:         
-                - 
-                    # Определяем что Боб обладает правом select для сервиса в контексте прав
-                    from: "bob" 
-                    to: "service"
-                    link: "select"
-                    context: 
-                        - "right"
                 -              
-                    # Алиса может читать данные из базы
-                    from: "alice"
-                    link: "select"
-                    to: "my-db"
-                    context: 
-                        - "right"
-                -              
-                    # Алиса может добавлять данные в базу
-                    from: "alice"
-                    link: "insert"
-                    to: "my-db"
-                    context: 
-                        - "right"
-                -
                     # Определяем что сервис подключается а БД
                     from: "my-backend"
                     to: "my-db"
@@ -304,6 +290,34 @@
                     from: "client"
                     to: "service"
                     link: "connect"
+                -              
+                    # Алиса может читать и добавлять данные
+                    from: "alice"
+                    link:
+                        - "select"
+                        - "insert"
+                    to: "my-db"
+                    context: "right"
+                - 
+
+                    # Боб обладает правом select для сервиса в контексте прав 
+                    # для концепта asis
+                    from: "bob" 
+                    to: "service"
+                    link: "select"
+                    context: 
+                        - "right"
+                        - "asis"
+                    # Планируется что Боб будет обладать правами создания и 
+                    # добавления согласно концепта todo
+                    from: "bob" 
+                    to: "service"
+                    link:
+                        - "select"
+                        - "insert"
+                    context: 
+                        - "right"
+                        - "todo"
 
             \end{verbatim}
 
@@ -314,22 +328,174 @@
         \end{enumerate}
 
 
-
     \subsection{Описание сущностей}
         \begin{enumerate}
 
-            \item Далее для сущностей возможнос описание специфичных свойств
+            \item Далее для сущностей возможно описание специфичных свойств
             так же в разрезе контекстов.
 
+            \item В общем виде свойства сущностей моугт быть определены кортежем 
+            атрибутов:
+
+            \begin{itemize}
+                \item \texttt{entity} - сущность для которой выполняется 
+                описание, может содержать множество;
+                \item \texttt{tuple} - список свойств сущности в 
+                формате ключ значение;
+                \item \texttt{context} - опциональный список контекстов, для 
+                которых выполняется описание;
+            \end{itemize}
+        
+
+            \item Описание сущностей производится в секции props:          
+            \begin{verbatim}
+            props:
+                # Человекочитаемое описание для сущности
+                -
+                    entity: "entity"
+                    context: "ru"
+                    tuple: 
+                        name:"Сущность"
+                # Описание Алисы вне контекста
+                -
+                    entity: "alice"
+                    tuple: 
+                        age:21
+                        weight:71
+                # Описание свойств для Алисы и Боба на разных языках
+                -
+                    entity: "alice"
+                    context: "ru"
+                    tuple: 
+                        name:"Алиса"
+                -
+                    entity: "alice"
+                    context: "en"
+                    tuple: 
+                        name:"Alice"
+                -
+                    entity: "bob"
+                    context: "ru"
+                    tuple: 
+                        name:"Боб"
+                -
+                    entity: "bob"
+                    context: "en"
+                    tuple: 
+                        name:"Bob"
+            
+            \end{verbatim}
+
+            \item Аналогичным образом возможно описание любых свойств сущностей.
 
         \end{enumerate}
         
 
 
     \section{Применимость}
+
+        \begin{enumerate}
+
+            \item Приведенные примеры показывают возможность использования 
+            модели сущностей Catlair для описания моделей архитектуры.
+
+            \item Нотация Catlair позволяет единообрзано описать перечнень 
+            объектов, компонентов из взаимосвязи, при этом все перечисленное 
+            может быть представлено с различных точек зрения, включая 
+            хронологические.
+
+            \item Модель применима для описания организационных структур, прав 
+            доступа, технических компонентов.
+
+            \item Модель может использоватся для единообразного формирования ER, 
+            BPMN, C4 диаграмм на всех уровнях, при этом соблюдается единообразие 
+            нотации, а формат представления определяется контекстом.
+
+        \end{enumerate}
         
 
-    \section{Резюме}
+    \section{Приложение}
+
+        Приложение содержит компактный листинг выше описанных примеров для 
+        общего восприятия.
+
+        \begin{verbatim}
+        entities:
+            entity: "entity"
+            component: "entity"
+            service: "component"
+            db: "component"
+            agent: "entity"
+            user: "agent"
+            client: "user"
+            my-backend: "service"
+            my-db: "db"
+            alice: "user"
+            bob: "client"
+            link: "entity"
+        links:         
+            -              
+                from: "my-backend"
+                to: "my-db"
+                link: "connect"
+            -
+                from: "client"
+                to: "service"
+                link: "connect"
+            -              
+                from: "alice"
+                link:
+                    - "select"
+                    - "insert"
+                to: "my-db"
+                context: "right"
+            - 
+                from: "bob" 
+                to: "service"
+                link: "select"
+                context: 
+                    - "right"
+                    - "asis"
+                from: "bob" 
+                to: "service"
+                link:
+                    - "select"
+                    - "insert"
+                context: 
+                    - "right"
+                    - "todo"
+            props:
+                -
+                    entity: "entity"
+                    context: "ru"
+                    tuple: 
+                        name:"Сущность"
+                -
+                    entity: "alice"
+                    tuple: 
+                        age:21
+                        weight:71
+                -
+                    entity: "alice"
+                    context: "ru"
+                    tuple: 
+                        name:"Алиса"
+                -
+                    entity: "alice"
+                    context: "en"
+                    tuple: 
+                        name:"Alice"
+                -
+                    entity: "bob"
+                    context: "ru"
+                    tuple: 
+                        name:"Боб"
+                -
+                    entity: "bob"
+                    context: "en"
+                    tuple: 
+                        name:"Bob"
+        \end{verbatim}
 
     \renewcommand{\refname}{Список литературы}
     \begin{thebibliography}{9}
