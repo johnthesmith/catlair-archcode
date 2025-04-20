@@ -436,11 +436,11 @@ Simon Brown.\
 *Software Architecture as Code*.\
 <https://static.codingthearchitecture.com/presentations/saturn2015-software-architecture-as-code.pdf>
 
-Cherkas R. Cheledinov I.\
-*Архитектура сущностей Catlair*.\
-<https://github.com/johnthesmith/scraps/blob/main/ru/entities.md>
-
 Mark Richards, Neal Ford.\
 *Is \"Architecture as Code\" the Future of Software Design?*\
 <https://www.architectureandgovernance.com/applications-technology/is-architecture-as-code-the-future-of-software-design/>
+
+Cherkas R. Cheledinov I.\
+*Архитектура сущностей Catlair*.\
+<https://github.com/johnthesmith/scraps/blob/main/ru/entities.md>
 :::
