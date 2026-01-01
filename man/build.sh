@@ -1,7 +1,7 @@
 #!/bin/bash
 
 tmp="./tmp"
-dest="./export"
+dest="../export"
 source="./source"
 sourceImages="$source/images"
 doc="catlair-archcode"
