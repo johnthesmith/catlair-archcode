@@ -1,0 +1,10 @@
+e:
+  context: information
+
+p:
+  - id: context
+    public:
+      name: Контекст
+      description: |
+        [Информация](@information), определяющая условия или область видимости
+        для [свойств](@property) и [связей](@link) [сущностей](@entity).

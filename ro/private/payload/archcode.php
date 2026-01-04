@@ -41,6 +41,10 @@ class ArchCode extends PusaWin
     */
     public function assemble()
     {
+        $epl = EPL::create( $this -> getApp() );
+
+        $epl -> assemble( 'rw/epl' );
+
         return $this;
     }
 }
