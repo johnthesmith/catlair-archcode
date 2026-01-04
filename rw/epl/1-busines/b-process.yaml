@@ -1,8 +1,8 @@
 e:
-  business-process: process
+  b-process: process
 
 p:
-  - id: business-process
+  - id: b-process
     public:
       name: Business Process
       description: |
