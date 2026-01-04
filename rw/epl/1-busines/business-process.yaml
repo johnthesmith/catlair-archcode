@@ -1,0 +1,10 @@
+e:
+  business-process: process
+
+p:
+  - id: business-process
+    public:
+      name: Business Process
+      description: |
+        Установленная последовательность [действий](@process) для достижения
+        бизнес-цели. Описывает потоки работ, роли, события и результаты.

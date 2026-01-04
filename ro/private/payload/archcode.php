@@ -45,6 +45,8 @@ class ArchCode extends PusaWin
 
         $epl -> assemble( 'rw/epl' );
 
+        print_r( $epl -> toString() );
+
         return $this;
     }
 }
