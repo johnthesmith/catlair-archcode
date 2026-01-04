@@ -1,0 +1,22 @@
+{
+    "properties-is-not-index-array": {
+        "rw/epl/0-root/entity/children/information/children/role.yaml": 1,
+        "rw/epl/0-root/entity/children/information/children/relation.yaml": 1,
+        "rw/epl/0-root/entity/children/information/children/link/in.yaml": 1,
+        "rw/epl/0-root/entity/children/information/children/link/index.yaml": 1,
+        "rw/epl/0-root/entity/children/information/children/link/see-also.yaml": 1,
+        "rw/epl/0-root/entity/children/information/children/property.yaml": 1,
+        "rw/epl/0-root/entity/children/information/children/context.yaml": 1,
+        "rw/epl/0-root/entity/children/information/children/metamodel.yaml": 1,
+        "rw/epl/0-root/entity/children/information/index.yaml": 1,
+        "rw/epl/0-root/entity/children/process/index.yaml": 1,
+        "rw/epl/0-root/entity/children/agent/children/deity.yaml": 1,
+        "rw/epl/0-root/entity/children/agent/children/person.yaml": 1,
+        "rw/epl/0-root/entity/children/agent/children/ai.yaml": 1,
+        "rw/epl/0-root/entity/children/agent/children/organization.yaml": 1,
+        "rw/epl/0-root/entity/children/agent/children/animal.yaml": 1,
+        "rw/epl/0-root/entity/children/agent/index.yaml": 1,
+        "rw/epl/0-root/entity/children/object/index.yaml": 1,
+        "rw/epl/0-root/entity/index.yaml": 1
+    }
+}
