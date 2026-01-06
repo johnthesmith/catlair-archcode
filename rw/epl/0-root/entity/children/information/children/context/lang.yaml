@@ -1,0 +1,55 @@
+e:
+  lang: context
+  en: lang
+  ru: lang
+
+p:
+  # lang - English description
+  - id: lang
+    context: [ "lang", "en" ]
+    private:
+      name: Language
+      description: |
+        [Context](@context) for linguistic localization of entity properties.
+        Defines human-readable names and descriptions.
+
+  # lang - Russian description
+  - id: lang
+    context: [ "lang", "ru" ]
+    private:
+      name: Язык
+      description: |
+        [Контекст](@context) для лингвистической локализации свойств сущностей.
+        Определяет человеко-читаемые имена и описания.
+
+  # en - English description
+  - id: en
+    context: [ "lang", "en" ]
+    private:
+      name: English
+      description: |
+        [Language](@lang) variant using Latin script.
+
+  # en - Russian description
+  - id: en
+    context: [ "lang", "ru" ]
+    private:
+      name: Английский
+      description: |
+        [Язык](@lang) вариант с использованием латинского алфавита.
+
+  # ru - English description
+  - id: ru
+    context: [ "lang", "en" ]
+    private:
+      name: Russian
+      description: |
+        [Language](@lang) variant using Cyrillic script.
+
+  # ru - Russian description
+  - id: ru
+    context: [ "lang", "ru" ]
+    private:
+      name: Русский
+      description: |
+        [Язык](@lang) вариант с использованием кириллицы.
