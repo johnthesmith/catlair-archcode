@@ -1,10 +1,15 @@
 {
     "stat": {
-        "begin": "2026-01-07 16:40:25.633936",
+        "begin": "2026-01-07 19:56:00.081332",
         "count": {
-            "entities": 62,
-            "properties": 68,
+            "entities": 48,
+            "properties": 54,
             "links": 3
+        }
+    },
+    "warning": {
+        "error-check-type": {
+            "vector-component": 1
         }
     }
 }

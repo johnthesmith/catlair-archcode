@@ -11,8 +11,8 @@ p:
     description: |
       Базовый тип [атрибута](@property), который может быть присвоен
       [сущности](@entity) для её описания. Определяет структуру метаданных.
-  context:
-    - [lang, ru]
+  vector:
+    lang: ru
 
 - id: entity-property
   private:
@@ -20,8 +20,8 @@ p:
     description: |
       Base type of [attribute](@property) that can be assigned to an
       [entity](@entity) for its description. Defines metadata structure.
-  context:
-    - [lang, en]
+  vector:
+    lang: en
 
 - id: entity-property-name
   private:
@@ -29,8 +29,8 @@ p:
     description: |
       Основное максимально короткое идентифицирующее свойство сущности. Может
       содержать имя или аббревиатуру. Используется для ссылок и поиска.
-  context:
-    - [lang, ru]
+  vector:
+    lang: ru
 
 - id: entity-property-name
   private:
@@ -38,8 +38,8 @@ p:
     description: |
       Primary minimal identifying property of an entity. May contain
       a name or abbreviation. Used for references and search.
-  context:
-    - [lang, en]
+  vector:
+    lang: en
 
 - id: entity-property-description
   private:
@@ -48,8 +48,8 @@ p:
       Развернутое текстовое определение сущности или расшифровка аббревиатуры.
       Не должно включать слова, используемые в атрибуте [](@entity-property-name).
       Даёт смысловое понимание.
-  context:
-    - [lang, ru]
+  vector:
+    lang: ru
 
 - id: entity-property-description
   private:
@@ -58,8 +58,8 @@ p:
       Extended textual definition of an entity or abbreviation explanation.
       Should not include words used in the [](@entity-property-name) attribute.
       Provides semantic understanding.
-  context:
-    - [lang, en]
+  vector:
+    lang: en
 
 - id: entity-property-content
   private:
@@ -67,8 +67,8 @@ p:
     description: |
       Основная информационная нагрузка сущности. Может содержать структурированные
       данные, текст, разметку или вложенные элементы. Несёт основную ценность.
-  context:
-    - [lang, ru]
+  vector:
+    lang: ru
 
 - id: entity-property-content
   private:
@@ -76,5 +76,5 @@ p:
     description: |
       Main informational payload of an entity. May contain structured
       data, text, markup, or nested elements. Carries primary value.
-  context:
-    - [lang, en]
+  vector:
+    lang: en

@@ -3,7 +3,8 @@ e:
 
 p:
   - id: b-process
-    context: en
+    vector:
+      lang: en
     public:
       name: Business Process
       description: |
@@ -11,7 +12,8 @@ p:
         Describes work flows, roles, events, and outcomes.
 
   - id: b-process
-    context: ru
+    vector:
+      lang: ru
     public:
       name: Бизнес-процесс
       description: |

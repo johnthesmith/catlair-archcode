@@ -57,8 +57,9 @@ class ArchCode extends PusaWeb
         $eplBuilder
         = EplBuilder::create( $epl )
         -> setDestination( $destination )
-        -> build( $source_epl, $index_file )
-        -> resultTo( $this );
+        -> run( $source_epl, $index_file )
+        -> resultTo( $this )
+        ;
 
         return $this;
     }

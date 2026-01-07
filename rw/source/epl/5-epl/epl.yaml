@@ -4,8 +4,8 @@ e:
 p:
 
 - id: epl
-  context:
-    - [lang, en]
+  vector:
+    lang: en
   private:
     name: "EPL"
     description: |
@@ -13,8 +13,8 @@ p:
       [entities](@entity), [properties](@property) and [links](@link).
 
 - id: epl
-  context:
-    - [lang, ru]
+  vector:
+    lang: ru
   private:
     name: "EPL"
     description: |

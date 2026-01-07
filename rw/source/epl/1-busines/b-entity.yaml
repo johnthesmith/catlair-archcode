@@ -3,7 +3,8 @@ e:
 
 p:
   - id: b-entity
-    context: en
+    vector:
+      lang: en
     public:
       name: Business Entity
       description: |
@@ -11,7 +12,8 @@ p:
         product, contract, or other element of business architecture.
 
   - id: b-entity
-    context: ru
+    vector:
+      lang: ru
     public:
       name: Бизнес сущность
       description: |
