@@ -23,29 +23,42 @@ namespace catlair;
 
 
 /* Load web payload library */
-require_once LIB . '/pusa/pusa_win.php';
+require_once LIB . '/pusa/pusa_web.php';
 require_once LIB . '/core/validator.php';
 
 /* EPL libraries */
 require_once LIB . '/epl/epl.php';
+require_once LIB . '/epl/epl_builder.php';
 
 
 
 /*
     Api class declaration
 */
-class ArchCode extends PusaWin
+class ArchCode extends PusaWeb
 {
     /*
         Activate page
     */
-    public function assemble()
+    public function build
+    (
+        /* Source files */
+        string $source_epl = './rw/source/epl',
+        /* Source index file from string */
+        string $index_file = './rw/source/index.md',
+        /* Destination files */
+        string $destination = './rw/result',
+    )
     {
+        /* Create model */
         $epl = Epl::create( $this -> getApp() );
 
-        $epl -> assemble( 'rw/epl' );
-
-        print_r( $epl -> toString() );
+        /* Create builder */
+        $eplBuilder
+        = EplBuilder::create( $epl )
+        -> setDestination( $destination )
+        -> build( $source_epl, $index_file )
+        -> resultTo( $this );
 
         return $this;
     }

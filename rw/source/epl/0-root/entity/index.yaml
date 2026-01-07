@@ -4,8 +4,8 @@ e:
 p:
 -
   id: entity
-  public:
-    image: a
+  vector:
+    lang: ru
   private:
     name: Сущность
     description: |
