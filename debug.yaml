@@ -1,10 +1,10 @@
 {
     "stat": {
-        "begin": "2026-01-08 18:50:06.320747",
+        "begin": "2026-01-09 05:57:42.041265",
         "count": {
-            "entities": 48,
-            "properties": 54,
-            "links": 3
+            "entities": 50,
+            "properties": 56,
+            "links": 5
         }
     },
     "warning": {
@@ -13,9 +13,7 @@
         },
         "unknown-link": {
             "./rw/source/content/default/index.md": {
-                "archcode-intro": 1,
-                "archcode-architecture": 1,
-                "archcode-licence": 1
+                "archcode-architecture": 1
             }
         }
     }
