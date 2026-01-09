@@ -43,7 +43,7 @@ class ArchCode extends PusaWeb
     public function build
     (
         /* Source files */
-        string $source_epl = './rw/source/epl',
+        string $source = './rw/source/epl',
         /* Source index file from string */
         string $index_file = './rw/source/index.md',
         /* Destination files */
@@ -57,7 +57,8 @@ class ArchCode extends PusaWeb
         $eplBuilder
         = EplBuilder::create( $epl )
         -> setDestination( $destination )
-        -> run( $source_epl, $index_file )
+        -> setSource( $source )
+        -> run( $index_file )
         -> resultTo( $this )
         ;
 

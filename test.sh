@@ -1,8 +1,9 @@
 #!/bin/bash
 
 ./cli.sh \
+--app.config=config.yaml \
 --engine.payload=archcode \
 --engine.method=build \
 --source=./rw/source \
---index-file=./rw/source/content/default/index.md \
---destination=./rw/result
+--destination=./rw/result \
+--index-file=./content/default/index.md

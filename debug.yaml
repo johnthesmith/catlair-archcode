@@ -1,6 +1,6 @@
 {
     "stat": {
-        "begin": "2026-01-09 05:57:42.041265",
+        "begin": "2026-01-09 22:24:06.655925",
         "count": {
             "entities": 50,
             "properties": 56,
@@ -12,7 +12,7 @@
             "vector-component": 1
         },
         "unknown-link": {
-            "./rw/source/content/default/index.md": {
+            "./rw/source/./content/default/index.md": {
                 "archcode-architecture": 1
             }
         }

@@ -1,0 +1,9 @@
+# Engine settings
+engine:
+  # Projects pathes for components searchig like files, payloads etc
+  projects:
+  - .
+  - ../default
+payloads:
+  archcode:
+    
