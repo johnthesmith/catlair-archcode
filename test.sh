@@ -4,7 +4,7 @@
 --app.config=config.yaml \
 --engine.payload=archcode \
 --engine.method=build \
---source=./rw/source \
+--source=../../scraps/arch-source \
 --destination-path=../../scraps \
 --project-path=arch \
---index-file=./content/default/index.md
+--index-file=./index.md
