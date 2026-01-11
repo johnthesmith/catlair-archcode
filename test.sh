@@ -5,5 +5,6 @@
 --engine.payload=archcode \
 --engine.method=build \
 --source=./rw/source \
---destination=./rw/result \
+--destination-path=../../scraps \
+--project-path=arch \
 --index-file=./content/default/index.md

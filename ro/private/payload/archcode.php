@@ -52,8 +52,10 @@ class ArchCode extends PusaWeb
         string $source = './rw/source/epl',
         /* Source index file from string */
         string $index_file = './rw/source/index.md',
-        /* Destination files */
-        string $destination = './rw/result',
+        /* Destination project path in the local FS */
+        string $destination_path = './rw/result',
+        /* Path from project root */
+        string $project_path = 'arch'
     )
     {
         /* Create model */
@@ -62,7 +64,8 @@ class ArchCode extends PusaWeb
         /* Create builder */
         $eplBuilder
         = EplBuilder::create( $epl )
-        -> setDestination( $destination )
+        -> setDestination( $destination_path )
+        -> setProjectPath( $project_path )
         -> setSource( $source )
         -> run( $index_file )
         -> resultTo( $this )

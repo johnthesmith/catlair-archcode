@@ -1,1 +1,1 @@
-[%label%](%link%|%hint%)
+[%label%](%link% "%hint%")
