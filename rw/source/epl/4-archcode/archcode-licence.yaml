@@ -7,7 +7,7 @@ p:
     name: Лицензия archcode
     hint: Лицензионное соглашение archchcode
     description: |
-      Документ предоставляет лицензионное соглашение [](@archcode).
+      Документ предоставляет лицензионное соглашение [](archcode).
 l:
 -
   from: archcode

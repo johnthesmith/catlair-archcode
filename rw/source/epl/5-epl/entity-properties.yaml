@@ -9,8 +9,8 @@ p:
   private:
     name: Свойство сущности
     description: |
-      Базовый тип [атрибута](@property), который может быть присвоен
-      [сущности](@entity) для её описания. Определяет структуру метаданных.
+      Базовый тип [атрибута](property), который может быть присвоен
+      [сущности](entity) для её описания. Определяет структуру метаданных.
   vector:
     lang: ru
 
@@ -18,8 +18,8 @@ p:
   private:
     name: Entity Property
     description: |
-      Base type of [attribute](@property) that can be assigned to an
-      [entity](@entity) for its description. Defines metadata structure.
+      Base type of [attribute](property) that can be assigned to an
+      [entity](entity) for its description. Defines metadata structure.
   vector:
     lang: en
 
@@ -46,7 +46,7 @@ p:
     name: Описание
     description: |
       Развернутое текстовое определение сущности или расшифровка аббревиатуры.
-      Не должно включать слова, используемые в атрибуте [](@entity-property-name).
+      Не должно включать слова, используемые в атрибуте [](entity-property-name).
       Даёт смысловое понимание.
   vector:
     lang: ru
@@ -56,7 +56,7 @@ p:
     name: Description
     description: |
       Extended textual definition of an entity or abbreviation explanation.
-      Should not include words used in the [](@entity-property-name) attribute.
+      Should not include words used in the [](entity-property-name) attribute.
       Provides semantic understanding.
   vector:
     lang: en

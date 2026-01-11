@@ -8,7 +8,7 @@ p:
     public:
       name: Business Process
       description: |
-        A defined sequence of [actions](@process) to achieve a business goal.
+        A defined sequence of [actions](process) to achieve a business goal.
         Describes work flows, roles, events, and outcomes.
 
   - id: b-process
@@ -17,5 +17,5 @@ p:
     public:
       name: Бизнес-процесс
       description: |
-        Установленная последовательность [действий](@process) для достижения
+        Установленная последовательность [действий](process) для достижения
         бизнес-цели. Описывает потоки работ, роли, события и результаты.

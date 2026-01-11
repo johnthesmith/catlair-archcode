@@ -10,8 +10,8 @@ p:
   private:
     name: Свойство связи
     description: |
-      Базовый тип [атрибута](@property), который описывает характеристику
-      [связи](@link) между сущностями.
+      Базовый тип [атрибута](property), который описывает характеристику
+      [связи](link) между сущностями.
   vector:
     lang: ru
 
@@ -19,7 +19,7 @@ p:
   private:
     name: Источник
     description: |
-      [Свойство связи](@link-property), указывающее на сущность(и),
+      [Свойство связи](link-property), указывающее на сущность(и),
       от которой исходит связь. Определяет начало отношения.
   vector:
     lang: ru
@@ -28,7 +28,7 @@ p:
   private:
     name: Назначение
     description: |
-      [Свойство связи](@link-property), указывающее на сущность(и),
+      [Свойство связи](link-property), указывающее на сущность(и),
       к которой направлена связь. Определяет конец отношения.
   vector:
     lang: ru
@@ -37,7 +37,7 @@ p:
   private:
     name: Тип связи
     description: |
-      [Свойство связи](@link-property), определяющее семантику отношения
+      [Свойство связи](link-property), определяющее семантику отношения
       между источником и назначением (например, наследование, вложение).
   vector:
     lang: ru
@@ -46,7 +46,7 @@ p:
   private:
     name: Контекст связи
     description: |
-      [Свойство связи](@link-property), определяющее условия, при которых
+      [Свойство связи](link-property), определяющее условия, при которых
       данная связь актуальна или видима (например, языковой контекст).
   vector:
     lang: ru
@@ -55,7 +55,7 @@ p:
   private:
     name: Пользовательское свойство связи
     description: |
-      [Свойство связи](@link-property), содержащее дополнительные,
+      [Свойство связи](link-property), содержащее дополнительные,
       нестандартные атрибуты связи, определяемые пользователем.
   vector:
     lang: ru
@@ -64,8 +64,8 @@ p:
   private:
     name: Link Property
     description: |
-      Base type of [attribute](@property) that describes a characteristic
-      of a [link](@link) between entities.
+      Base type of [attribute](property) that describes a characteristic
+      of a [link](link) between entities.
   vector:
     lang: en
 
@@ -73,7 +73,7 @@ p:
   private:
     name: From
     description: |
-      [Link property](@link-property) indicating the entity(ies)
+      [Link property](link-property) indicating the entity(ies)
       from which the link originates. Defines the start of the relationship.
   vector:
     lang: en
@@ -82,7 +82,7 @@ p:
   private:
     name: To
     description: |
-      [Link property](@link-property) indicating the entity(ies)
+      [Link property](link-property) indicating the entity(ies)
       to which the link is directed. Defines the end of the relationship.
   vector:
     lang: en
@@ -91,7 +91,7 @@ p:
   private:
     name: Link Type
     description: |
-      [Link property](@link-property) defining the semantics of the relationship
+      [Link property](link-property) defining the semantics of the relationship
       between source and target (e.g., inheritance, containment).
   vector:
     lang: en
@@ -100,7 +100,7 @@ p:
   private:
     name: Link Context
     description: |
-      [Link property](@link-property) defining the conditions under which
+      [Link property](link-property) defining the conditions under which
       this link is relevant or visible (e.g., language context).
   vector:
     lang: en
@@ -109,7 +109,7 @@ p:
   private:
     name: Custom Link Property
     description: |
-      [Link property](@link-property) containing additional,
+      [Link property](link-property) containing additional,
       non-standard attributes of a link, defined by the user.
   vector:
     lang: en

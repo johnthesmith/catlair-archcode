@@ -6,4 +6,4 @@ p:
     private:
       name: Отношение
       description: |
-        [](@information) о связи или взаимодействии между [сущностями](@entity).
+        [](information) о связи или взаимодействии между [сущностями](entity).

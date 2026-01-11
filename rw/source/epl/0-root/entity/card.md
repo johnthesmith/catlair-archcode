@@ -1,6 +1,6 @@
 # %name% (%id%)
 
-<cl cmd="parents" id="%id%" record="@child.md" delimiter="/" />
+<cl cmd="parents" id="%id%" record="child.md" delimiter="/" />
 
 ---
 
@@ -14,10 +14,10 @@
 
 # Смотри так же
 
-<cl cmd="from" id="%id%" type="see-also" record="@to.md"/>
+<cl cmd="from" id="%id%" type="see-also" record="to.md"/>
 
 
 
 # Потомки
 
-<cl cmd="children" id="%id%" record="@child.md"/>
+<cl cmd="children" id="%id%" record="child.md"/>

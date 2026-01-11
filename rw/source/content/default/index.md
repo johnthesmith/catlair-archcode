@@ -5,6 +5,10 @@
 [Ссылка](http://google.com)
 
 
+
+1. [Тестовая страница](./test.md#chapter)
+
+
 ## Информация
 
 1. [](archcode-intro)

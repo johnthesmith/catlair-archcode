@@ -5,4 +5,4 @@ p:
   - id: archcode
     public:
       name: Archcode
-      description: Генератор документации из [](@epl) моделей.
+      description: Генератор документации из [](epl) моделей.
