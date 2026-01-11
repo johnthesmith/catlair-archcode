@@ -18,6 +18,12 @@
 
 
 
+/*
+    2026.01.01 - still@itserv.ru
+*/
+
+
+
 namespace catlair;
 
 
