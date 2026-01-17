@@ -1,19 +1,18 @@
 {
     "stat": {
-        "begin": "2026-01-11 21:32:45.500891",
+        "begin": "2026-01-17 18:38:44.854450",
         "count": {
-            "entities": 50,
-            "properties": 56,
-            "links": 5
+            "entities": 78,
+            "properties": 84,
+            "links": 8
         }
     },
     "warning": {
-        "error-check-type": {
-            "vector-component": 1
-        },
         "unknown-link": {
-            "../../scraps/arch-source/./index.md": {
-                "archcode-architecture": 1
+            "archcode": {
+                "/card/archcode-editor/default.md": 1,
+                "/card/archcode-format/default.md": 1,
+                "/card/archcode-licence/default.md": 1
             }
         }
     }

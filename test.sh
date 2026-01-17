@@ -7,4 +7,4 @@
 --source=../../scraps/arch-source \
 --destination-path=../../scraps \
 --project-path=arch \
---index-file=./index.md
+--index-file=index.md

@@ -49,13 +49,13 @@ class ArchCode extends PusaWeb
     public function build
     (
         /* Source files */
-        string $source = './rw/source/epl',
+        string $source              = './epl',
         /* Source index file from string */
-        string $index_file = './rw/source/index.md',
+        string $index_file          = 'index.md',
         /* Destination project path in the local FS */
-        string $destination_path = './rw/result',
+        string $destination_path    = './result',
         /* Path from project root */
-        string $project_path = 'arch'
+        string $project_path        = 'arch'
     )
     {
         /* Create model */
