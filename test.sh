@@ -5,6 +5,6 @@
 --engine.payload=archcode \
 --engine.method=build \
 --source=../../scraps/arch-source \
---destination-path=../../scraps/arch-dest \
---project-path=arch \
+--destination-path=../../scraps \
+--destination-subpath=arch-dest \
 --index-file=index.md
